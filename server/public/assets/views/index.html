@@ -12,6 +12,7 @@
 
     <div class = "container" ng-controller="LineupSet">
         <div class = "well roster col-md-3">
+            <h1>Roster</h1>
             <div ng-repeat="player in teamArray">
                 <div class = "player">
                     <input type ="checkbox" ng-model="checked"
@@ -26,9 +27,12 @@
                 <!--</div>-->
             <!--</div>-->
         </div>
-        <div class="lineup col-md-4" ng-repeat="player in teamArray | filter:'true'">
-            {{player.name}}
-            {{player.position}}
+        <div class="lineup col-md-4" >
+            <h1>Lineup</h1>
+            <div ng-repeat="player in teamArray | filter:'true':'RB'">
+                {{player.name}}
+                {{player.position}}
+            </div>
         </div>
     </div>
 
