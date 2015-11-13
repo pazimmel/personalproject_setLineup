@@ -15,7 +15,7 @@
             <h1>Roster</h1>
             <div ng-repeat="player in teamArray">
                 <div class = "player">
-                    <input type ="checkbox" ng-model="checked"
+                    <input type ="checkbox" ng-model="checked" ng-init="checked=player.starter"
                            ng-click ="togglePlayer(player)">
                     <p>Name: {{player.name}}</p>
                     <p>Position: {{player.position}}</p>
@@ -29,10 +29,11 @@
         </div>
         <div class="lineup col-md-4" >
             <h1>Lineup</h1>
-            <div ng-repeat="player in teamArray | filter:'true':'RB'">
+            <div ng-repeat="player in teamArray | filter: starterfilter">
                 {{player.name}}
                 {{player.position}}
             </div>
+            <button type = 'submit' ng-click="checkLineup()">Check Lineup</button>
         </div>
     </div>
 
