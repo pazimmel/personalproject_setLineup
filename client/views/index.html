@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Styles-->
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+</head>
+<body>
+    <div ng-include="'/assets/views/templates/header.html'"></div>
+
+    <div class = "container" ng-controller="LineupSet">
+        <div class = "well roster col-md-3">
+            <div ng-repeat="player in teamArray">
+                <div class = "player">
+                    <input type ="checkbox" ng-model="checked"
+                           ng-click ="togglePlayer(player)">
+                    <p>Name: {{player.name}}</p>
+                    <p>Position: {{player.position}}</p>
+                </div>
+            </div>
+            <!--<div class = "lineup container col-md-3">Lineup-->
+                <!--<div ng-show="startPlayer">-->
+                    <!--<p>{{player.name}}</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="lineup col-md-4" ng-repeat="player in teamArray | filter:'true'">
+            {{player.name}}
+            {{player.position}}
+        </div>
+    </div>
+
+    <!--<label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>-->
+    <!--Show when checked:-->
+<!--<span ng-if="checked" class="animate-if">-->
+  <!--This is removed when the checkbox is unchecked.-->
+<!--</span>-->
+
+    <!--SCRIPTS-->
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+</body>
+</html>

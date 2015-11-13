@@ -1,0 +1,17 @@
+.roster {
+    width: 500px;
+    float: left;
+}
+.player {
+    padding: 0 5px 5px 5px;
+    display:block;
+    width: 400px;
+    height: 30px;
+}
+.player p{
+    display:inline-block;
+}
+.lineup {
+    width: 400px;
+    float:left;
+}
