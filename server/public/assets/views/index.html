@@ -17,21 +17,15 @@
                 <div class = "player">
                     <input type ="checkbox" ng-model="checked" ng-init="checked=player.starter"
                            ng-click ="togglePlayer(player)">
-                    <p>Name: {{player.name}}</p>
-                    <p>Position: {{player.position}}</p>
+                    <roster-info info = "player"></roster-info>
                 </div>
             </div>
-            <!--<div class = "lineup container col-md-3">Lineup-->
-                <!--<div ng-show="startPlayer">-->
-                    <!--<p>{{player.name}}</p>-->
-                <!--</div>-->
-            <!--</div>-->
+
         </div>
         <div class="lineup col-md-4" >
             <h1>Lineup</h1>
             <div ng-repeat="player in teamArray | filter: starterfilter">
-                {{player.name}}
-                {{player.position}}
+               <lineup-info info="player"></lineup-info>
             </div>
             <button type = 'submit' ng-click="checkLineup()">Check Lineup</button>
         </div>

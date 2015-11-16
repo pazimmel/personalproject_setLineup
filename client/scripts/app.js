@@ -23,7 +23,7 @@ myApp.controller("LineupSet", ["$scope", "$http", function($scope, $http){
     };
 
     $scope.togglePlayer = function(positionPlayer){
-        //console.log(positionPlayer.starter);
+        console.log(positionPlayer.starter);
         positionPlayer.starter = !positionPlayer.starter;
         //console.log(positionPlayer.starter);
     };
